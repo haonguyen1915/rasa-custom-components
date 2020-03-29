@@ -1,0 +1,403 @@
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1641b9198>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'sam pu che hi' with intent '{'name': 'greet', 'confidence': 0.5975554585456848}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 23 events.
+DEBUG:rasa.core.policies.fallback:NLU confidence 0.5975554585456848 is lower than NLU threshold 0.95. 
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' has to affirm intent 'greet'.
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_ask_affirmation' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_default_ask_affirmation' ended with events '[BotUttered('Did you mean 'greet'?', {"elements": null, "quick_replies": null, "buttons": [{"title": "Yes", "payload": "/greet"}, {"title": "No", "payload": "/out_of_scope"}], "attachment": null, "image": null, "custom": null}, {}, 1585412971.031704)]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.memoization:Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1641d0278>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'yes' with intent '{'name': 'affirm', 'confidence': 0.9993100166320801}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 27 events.
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' affirmed intent 'affirm'
+DEBUG:rasa.core.policies.memoization:Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_affirm': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_revert_fallback_events' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_revert_fallback_events' ended with events '[<rasa.core.events.UserUtteranceReverted object at 0x1641d8400>, <rasa.core.events.UserUtteranceReverted object at 0x10954cf60>, <rasa.core.events.ActionExecuted object at 0x1641d0390>, <rasa.core.events.UserUttered object at 0x1641d0128>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_affirm': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413015.602814), <rasa.core.events.UserUtteranceReverted object at 0x1641d09e8>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x164c86f28>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'sampuche hi' with intent '{'name': 'greet', 'confidence': 0.9920262098312378}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 37 events.
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413109.1095328), <rasa.core.events.UserUtteranceReverted object at 0x10954b588>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x1641d04e0>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'sam pu che hi' with intent '{'name': 'greet', 'confidence': 0.5975554585456848}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 42 events.
+DEBUG:rasa.core.policies.fallback:NLU confidence 0.5975554585456848 is lower than NLU threshold 0.95. 
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' has to affirm intent 'greet'.
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_ask_affirmation' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_default_ask_affirmation' ended with events '[BotUttered('Did you mean 'greet'?', {"elements": null, "quick_replies": null, "buttons": [{"title": "Yes", "payload": "/greet"}, {"title": "No", "payload": "/out_of_scope"}], "attachment": null, "image": null, "custom": null}, {}, 1585413115.722848)]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.memoization:Current tracker state [{}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x164ca9438>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'no' with intent '{'name': 'deny', 'confidence': 0.9847501516342163}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 46 events.
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' affirmed intent 'deny'
+DEBUG:rasa.core.policies.memoization:Current tracker state [{'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_deny': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_revert_fallback_events' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_revert_fallback_events' ended with events '[<rasa.core.events.UserUtteranceReverted object at 0x164ca92e8>, <rasa.core.events.UserUtteranceReverted object at 0x164ca9320>, <rasa.core.events.ActionExecuted object at 0x164ca95f8>, <rasa.core.events.UserUttered object at 0x16419b0b8>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_deny': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413137.2431822), <rasa.core.events.UserUtteranceReverted object at 0x164cb9748>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'prev_action_listen': 1.0, 'intent_greet': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.nlu.training_data.loading:Training data format of 'data/stories.md' is 'unk'.
+DEBUG:pykwalify.compat:Using yaml library: /Users/hao/opt/anaconda3/envs/nlp/lib/python3.6/site-packages/ruamel/yaml/__init__.py
+DEBUG:rasa.core.nlg.generator:Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+DEBUG:rasa.core.training.dsl:Skipping line * form: inform{"cuisine": "mexican"}, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line - form: restaurant_form, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line * form: inform{"number": "2"}, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line - form: restaurant_form, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line * form: affirm, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line - form: restaurant_form, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line * form: inform, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line - form: restaurant_form, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line * form: inform{"feedback": "great"}, because it was generated by form action
+DEBUG:rasa.core.training.dsl:Skipping line - form: restaurant_form, because it was generated by form action
+DEBUG:rasa.core.training.generator:Generated trackers will be deduplicated based on their unique last 5 states.
+DEBUG:rasa.core.training.generator:Number of augmentation rounds is 3
+DEBUG:rasa.core.training.generator:Starting data generation round 0 ... (with 1 trackers)
+DEBUG:rasa.core.training.generator:Finished phase (11 training samples found).
+DEBUG:rasa.core.training.generator:Data generation rounds finished.
+DEBUG:rasa.core.training.generator:Found 0 unused checkpoints
+DEBUG:rasa.core.training.generator:Starting augmentation round 0 ... (with 11 trackers)
+DEBUG:rasa.core.training.generator:Finished phase (82 training samples found).
+DEBUG:rasa.core.training.generator:Starting augmentation round 1 ... (with 50 trackers)
+DEBUG:rasa.core.training.generator:Finished phase (187 training samples found).
+DEBUG:rasa.core.training.generator:Starting augmentation round 2 ... (with 50 trackers)
+DEBUG:rasa.core.training.generator:Finished phase (304 training samples found).
+DEBUG:rasa.core.training.generator:Found 304 training trackers.
+DEBUG:rasa.core.training.generator:Subsampled to 293 augmented training trackers.
+DEBUG:rasa.core.training.generator:There are 11 original trackers.
+DEBUG:rasa.core.agent:Agent trainer got kwargs: {}
+DEBUG:rasa.core.featurizers:Creating states and action examples from collected trackers (by MaxHistoryTrackerFeaturizer(NoneType))...
+DEBUG:rasa.core.featurizers:Created 50 action examples.
+DEBUG:rasa.core.policies.memoization:Memorized 50 unique examples.
+DEBUG:rasa.core.featurizers:Creating states and action examples from collected trackers (by MaxHistoryTrackerFeaturizer(NoneType))...
+DEBUG:rasa.core.featurizers:Created 30 action examples.
+DEBUG:rasa.core.policies.memoization:Memorized 4 unique examples.
+INFO:rasa.core.agent:Model directory models/current/core exists and contains old model files. All files will be overwritten.
+INFO:rasa.core.agent:Persisted model to '/Users/hao/Projects/Ftech/Onboardings/rasa_blogs/rasa-formbot/models/current/core'
+DEBUG:rasa.utils.tensorflow.models:Loading the model ...
+WARNING:tensorflow:From /Users/hao/opt/anaconda3/envs/nlp/lib/python3.6/site-packages/tensorflow_core/python/ops/array_grad.py:563: _EagerTensorBase.cpu (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.identity instead.
+DEBUG:rasa.utils.tensorflow.models:Finished loading the model.
+DEBUG:rasa.utils.tensorflow.models:Building tensorflow prediction graph...
+DEBUG:rasa.utils.tensorflow.models:Finished building tensorflow prediction graph.
+DEBUG:pykwalify.compat:Using yaml library: /Users/hao/opt/anaconda3/envs/nlp/lib/python3.6/site-packages/ruamel/yaml/__init__.py
+DEBUG:rasa.core.nlg.generator:Instantiated NLG to 'TemplatedNaturalLanguageGenerator'.
+DEBUG:rasa.core.tracker_store:Creating a new tracker for id 'default'.
+DEBUG:rasa.core.processor:Starting a new session for conversation ID 'default'.
+DEBUG:rasa.core.processor:Action 'action_session_start' ended with events '[<rasa.core.events.SessionStarted object at 0x15d174160>, <rasa.core.events.ActionExecuted object at 0x15d174048>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x15c9760f0>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'hi' with intent '{'name': 'greet', 'confidence': 0.9995782971382141}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 4 events.
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '17'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'utter_greet' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'utter_greet' ended with events '[BotUttered('Hello! I am restaurant search assistant! How can I help?', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413266.8313239)]'.
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x15c9e9080>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'sam pu che hi' with intent '{'name': 'greet', 'confidence': 0.5975554585456848}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 8 events.
+DEBUG:rasa.core.policies.fallback:NLU confidence 0.5975554585456848 is lower than NLU threshold 0.95. 
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' has to affirm intent 'greet'.
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_ask_affirmation' with confidence 1.00.
+DEBUG:rasa.core.actions.action:Calling action endpoint to run action 'action_default_ask_affirmation'.
+DEBUG:rasa.core.processor:Action 'action_default_ask_affirmation' ended with events '[BotUttered('Did you mean 'greet'?', {"elements": null, "quick_replies": null, "buttons": [{"title": "Yes", "payload": "/greet"}, {"title": "No", "payload": "/out_of_scope"}], "attachment": null, "image": null, "custom": null}, {}, 1585413274.276741)]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.memoization:Current tracker state [{}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x102564400>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'yes' with intent '{'name': 'affirm', 'confidence': 0.9993100166320801}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 12 events.
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' affirmed intent 'affirm'
+DEBUG:rasa.core.policies.memoization:Current tracker state [{'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_affirm': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_revert_fallback_events' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_revert_fallback_events' ended with events '[<rasa.core.events.UserUtteranceReverted object at 0x159e53208>, <rasa.core.events.UserUtteranceReverted object at 0x15c17c4a8>, <rasa.core.events.ActionExecuted object at 0x15a282898>, <rasa.core.events.UserUttered object at 0x15c248278>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'prev_action_listen': 1.0, 'intent_affirm': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413280.647764), <rasa.core.events.UserUtteranceReverted object at 0x15c78a0b8>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x15c6f72e8>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'hi sampuche' with intent '{'name': 'greet', 'confidence': 0.9893659353256226}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 22 events.
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413306.000588), <rasa.core.events.UserUtteranceReverted object at 0x15d174320>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x15d0890b8>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'sam pu che hi' with intent '{'name': 'greet', 'confidence': 0.5975554585456848}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 27 events.
+DEBUG:rasa.core.policies.fallback:NLU confidence 0.5975554585456848 is lower than NLU threshold 0.95. 
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' has to affirm intent 'greet'.
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_ask_affirmation' with confidence 1.00.
+DEBUG:rasa.core.actions.action:Calling action endpoint to run action 'action_default_ask_affirmation'.
+DEBUG:rasa.core.processor:Action 'action_default_ask_affirmation' ended with events '[BotUttered('Did you mean 'greet'?', {"elements": null, "quick_replies": null, "buttons": [{"title": "Yes", "payload": "/greet"}, {"title": "No", "payload": "/out_of_scope"}], "attachment": null, "image": null, "custom": null}, {}, 1585413323.5301619)]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.memoization:Current tracker state [{}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.
+DEBUG:rasa.core.tracker_store:Recreating tracker for id 'default'
+ERROR:rasa.nlu.extractors.duckling_http_extractor:Failed to connect to duckling http server. Make sure the duckling server is running/healthy/not stale and the proper host and port are set in the configuration. More information on how to run the server can be found on github: https://github.com/facebook/duckling#quickstart Error: HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /parse (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x15d099cf8>: Failed to establish a new connection: [Errno 61] Connection refused',))
+DEBUG:rasa.core.processor:Received user message 'no' with intent '{'name': 'deny', 'confidence': 0.9847501516342163}' and entities '[]'
+DEBUG:rasa.core.processor:Logged UserUtterance - tracker now has 31 events.
+DEBUG:rasa.core.policies.two_stage_fallback:User 'default' affirmed intent 'deny'
+DEBUG:rasa.core.policies.memoization:Current tracker state [{'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_action_default_ask_affirmation': 1.0, 'intent_greet': 1.0}, {'intent_deny': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_revert_fallback_events' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_revert_fallback_events' ended with events '[<rasa.core.events.UserUtteranceReverted object at 0x15ee66b00>, <rasa.core.events.UserUtteranceReverted object at 0x15d099c18>, <rasa.core.events.ActionExecuted object at 0x15d089b00>, <rasa.core.events.UserUttered object at 0x15d080a90>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}, {'intent_deny': 1.0, 'prev_action_listen': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is no memorised next action
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_0_TwoStageFallbackPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_default_fallback' with confidence 0.30.
+DEBUG:rasa.core.processor:Action 'action_default_fallback' ended with events '[BotUttered('sorry, I didn't understand you, please try input something else', {"elements": null, "quick_replies": null, "buttons": null, "attachment": null, "image": null, "custom": null}, {}, 1585413326.2695942), <rasa.core.events.UserUtteranceReverted object at 0x15c6f7630>]'.
+DEBUG:rasa.core.processor:Current slot values: 
+	cuisine: None
+	feedback: None
+	num_people: None
+	outdoor_seating: None
+	preferences: None
+	requested_slot: None
+DEBUG:rasa.core.policies.two_stage_fallback:NLU confidence threshold met, confidence of fallback action set to core threshold (0.3).
+DEBUG:rasa.core.policies.memoization:Current tracker state [None, None, {}, {'intent_greet': 1.0, 'prev_action_listen': 1.0}, {'prev_utter_greet': 1.0, 'intent_greet': 1.0}]
+DEBUG:rasa.core.policies.memoization:There is a memorised next action '0'
+DEBUG:rasa.core.policies.form_policy:There is no active form
+DEBUG:rasa.core.policies.mapping_policy:There is no mapped action for the predicted intent, 'greet'.
+DEBUG:rasa.core.policies.ensemble:Predicted next action using policy_1_MemoizationPolicy
+DEBUG:rasa.core.processor:Predicted next action 'action_listen' with confidence 1.00.
+DEBUG:rasa.core.processor:Action 'action_listen' ended with events '[]'.
+DEBUG:rasa.core.lock_store:Deleted lock for conversation 'default'.

@@ -15,8 +15,9 @@ from haolib import *
 from rasa.core.policies.ensemble import PolicyEnsemble
 from haolib.lib_rasa.evaluation import EvaluateModel
 from haolib.lib_cm.arg_parser import ArgParser
+import sys
+sys.path.append("/Users/hao/Projects/Ftech/Onboardings/rasa_blogs/rasa-custom-components")
 logger = logging.getLogger(__name__)
-
 
 # prj_dir = os.path.join(PR)
 
@@ -33,7 +34,8 @@ def train_nlu(config_file="config.yml", model_directory="models", model_name="cu
     # Attention: trainer.persist stores the model and all meta data into a folder.
     # The folder itself is not zipped.
     model_path = os.path.join(model_directory, model_name)
-    model_directory = trainer.persist(model_path, fixed_model_name="nlu")
+    # model_directory = trainer.persist(model_path, fixed_model_name="nlu")
+    model_directory = None
 
     logger.info(f"Model trained. Stored in '{model_directory}'.")
 
